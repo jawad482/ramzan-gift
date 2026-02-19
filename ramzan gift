@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramzan Gift</title>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow: hidden;
+}
+body {
+    background: url('https://i.imgur.com/FQyKZQk.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.overlay {
+    position: absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    animation: fadeIn 1s ease;
+}
+button {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: gold;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+button:hover {
+    transform: scale(1.1);
+}
+.hidden { display:none; }
+
+.dua-card {
+    background: rgba(255,255,255,0.95);
+    color: black;
+    padding: 30px;
+    border-radius: 25px;
+    max-width: 90%;
+    text-align: center;
+    animation: slideUp 0.8s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity:0;} to {opacity:1;}
+}
+@keyframes slideUp {
+    from {transform: translateY(50px); opacity:0;}
+    to {transform: translateY(0); opacity:1;}
+}
+
+.urdu-text {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    margin-top: 15px;
+    font-size: 16px;
+}
+</style>
+</head>
+<body>
+
+<!-- Welcome Screen -->
+<div class="overlay" id="welcome">
+    <h1>🌙 Ramzan Mubarak 🌙</h1>
+    <p>A special dua gift for you / آپ کے لیے خصوصی دعاؤں کا تحفہ</p>
+    <button onclick="showDuas()">🎁 Open Gift / تحفہ کھولیں</button>
+</div>
+
+<!-- Duas Screen -->
+<div class="overlay hidden" id="duas">
+    <div class="dua-card">
+        <h2>🤲 Ramzan Duas / رمضان کی دعائیں 🤲</h2>
+        <p>
+            Allah aap ke rozay qabool farmaye<br>
+            Allah aap ke ghar mein barkat ata kare<br>
+            Allah aap ko sehat aur sukoon de<br>
+            Allah aap ki har jaiz dua qabool farmaye
+        </p>
+        <div class="urdu-text">
+            اللہ آپ کے روزے قبول فرمائے<br>
+            اللہ آپ کے گھر میں برکت دے<br>
+            اللہ آپ کو صحت اور سکون دے<br>
+            اللہ آپ کی ہر جائز دعا قبول فرمائے
+        </div>
+        <h3>✨ From: Jawad Khan ✨</h3>
+    </div>
+</div>
+
+<script>
+function showDuas(){
+    document.getElementById('welcome').classList.add('hidden');
+    document.getElementById('duas').classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
